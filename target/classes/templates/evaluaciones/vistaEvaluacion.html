@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vista Evaluación</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        #container {
+            background-color: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        #header {
+            background-color: #337ab7;
+            color: #fff;
+            border-radius: 20px 20px 0 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        #content {
+            padding: 20px;
+        }
+
+        form {
+            border-radius: 20px;
+            padding: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+
+        input,
+        select {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #0972ce;
+            color: white;
+            padding: 12px 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #fceded;
+            color: #000000;
+        }
+
+        #backButton {
+            margin-top: 20px;
+            background-color: #555;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="container">
+        <div id="header">
+            <h2>Detalles</h2>
+        </div>
+
+        <div id="content">
+            <form th:action="@{/evaluaciones/guardarEvaluacion}" method="post" id="evaluacionForm">
+                <input type="hidden" th:field="${evaluacion.id}" />
+
+                <label>ID:</label>
+                <input type="text" th:value="${evaluacion.id}" readonly="readonly" />
+
+                <label>Empresa:</label>
+                <input type="text" th:field="${evaluacion.empresa.nombre}" readonly="readonly"></span>
+
+                <label>Tipo:</label>
+                <input type="text" th:field="${evaluacion.tipo}" readonly="readonly" />
+
+                <label>Estado:</label>
+                <input type="text" th:field="${evaluacion.estado}" readonly="readonly" />
+
+                <label>Demanda 1:</label>
+                <select th:field="${evaluacion.pregunta1}" required="required" class="pregunta" data-index="1"
+                    name="pregunta1">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select><br />
+    
+                <label>Demanda 2:</label>
+                <select th:field="${evaluacion.pregunta2}" required="required" class="pregunta" data-index="2"
+                    name="pregunta2">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select><br />
+    
+                <label>Demanda 3:</label>
+                <select th:field="${evaluacion.pregunta3}" required="required" class="pregunta" data-index="3"
+                    name="pregunta3">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select><br />
+    
+                <label>Demanda 4:</label>
+                <select th:field="${evaluacion.pregunta4}" required="required" class="pregunta" data-index="4"
+                    name="pregunta4">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select><br />
+    
+                <label>Demanda 5:</label>
+                <select th:field="${evaluacion.pregunta5}" required="required" class="pregunta" data-index="5"
+                    name="pregunta5">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select><br />
+    
+
+                <button type="submit">Guardar</button>
+            </form>
+
+            <button id="backButton" type="button" onclick="location.href='/evaluaciones/lista'">Volver</button>
+        </div>
+    </div>
+
+</body>
+
+</html>

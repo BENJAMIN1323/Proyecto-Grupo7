@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Formulario de Empresa</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/form_empresa.css">
+
+</head>
+
+<body>
+    <div id="h" class="blue-header">
+        <h1>Ingreso de datos Empresa</h1>
+    </div>
+    <div id="j" class="content">
+        <form action="/empresa/guardarEmpresa" method="post" th:object="${empresa}">
+            <label for="id">ID:</label>
+            <input type="text" id="id" th:field="*{id}" placeholder="Ingresar ID" />
+
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" th:field="*{nombre}" placeholder="Ingresar Nombre" />
+
+            <label for="telefono">Teléfono:</label>
+            <input type="text" id="telefono" th:field="*{telefono}" placeholder="Ingresar Teléfono" />
+
+            <label for="direccion">Dirección:</label>
+            <input type="text" id="direccion" th:field="*{direccion}" placeholder="Ingresar Dirección" />
+
+            <label for="email">Correo:</label>
+            <input type="text" id="email" th:field="*{email}" placeholder="Ingresar Correo" />
+
+            <label for="idCens">ID CENS:</label>
+            <input type="text" id="idCens" th:field="*{id_cens}" placeholder="Ingresar ID CENS" />
+
+            <label for="idAnexoTec">ID Anexo Tec:</label>
+            <input type="text" id="idAnexoTec" th:field="*{id_anexo_tec}" placeholder="Ingresar ID Anexo Tec" />
+
+            <label for="promedioAt">Promedio AT:</label>
+            <input type="text" id="promedioAt" th:field="*{promedio_at}" placeholder="Ingresar Promedio AT" />
+
+            <label for="promedioCens">Promedio CENS:</label>
+            <input type="text" id="promedioCens" th:field="*{promedio_cens}" placeholder="Ingresar Promedio CENS" />
+
+            <button type="submit">Guardar</button>
+            <button type="button" onclick="location.href='/';">Cancelar</button>
+        </form>
+    </div>
+    <footer>
+        <p>&copy; 2023 CENS - Todos los derechos reservados</p>
+    </footer>
+</body>
+
+</html>

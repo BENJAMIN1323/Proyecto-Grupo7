@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Inicio</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/index.css">
+
+</head>
+
+<body>
+    <header>
+        <img src="img/Cens.jpg" alt="logo" class="logo" />
+        <p> Bienvenido a Cens</p>
+        <!-- dropBox -->
+        <div class="dropdown">
+            <button class="dropbtn">Menú</button>
+            <div class="dropdown-content">
+                <a href='/empresa/lista'>Empresas</a>
+                <a href='/evaluaciones/lista'>Evaluaciones</a>
+                <a href='/promedio/lista'>Promedio</a>
+                <a href='/usuario/formulario'>Nuevo Usuario</a>
+                <a href='/login'>Cerrar sesion</a>
+            </div>
+        </div>
+    </header>
+
+    <div id="container">
+
+        <button type="button" onclick="location.href='/usuario/lista'">Usuarios</button>
+        <button type="button" onclick="location.href='/usuario/formulario'">Crear Usuario</button>
+        <button type="button" onclick="location.href='/empresa/lista'">Empresas</button>
+        <button type="button" onclick="location.href='/empresa/formulario'">Crear Empresa</button>
+        <button type="button" onclick="location.href='/evaluaciones/lista'">Evaluaciones</button>
+        <button type="button" onclick="location.href='/promedio/lista'">Promedios</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 CENS - Todos los derechos reservados</p>
+    </footer>
+</body>
+
+</html>

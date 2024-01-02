@@ -1,0 +1,159 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    background-color: #fff;
+    text-align: center;
+    padding: 1px 0;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+}
+
+.logo {
+    max-width: 100px;
+    border-radius: 50%;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 10px;
+}
+
+#j {
+    text-align: center;
+    padding: 20px;
+    border-radius: 0;
+    box-shadow: none;
+    color: #3498db;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    transition: none;
+    text-align: left;
+    width: 100%;
+    /* Hace que los botones ocupen todo el ancho del contenedor */
+    display: block;
+    /* Hace que cada botón sea un bloque independiente */
+}
+
+button:nth-of-type(1) {
+    background-color: #3498db;
+    color: #fff;
+}
+
+button:nth-of-type(2) {
+    background-color: #3498db;
+    color: #fff;
+}
+
+button:nth-of-type(3) {
+    background-color: #3498db;
+    color: #fff;
+}
+
+button:nth-of-type(4) {
+    background-color: #3498db;
+    color: #fff;
+}
+
+button:nth-of-type(5) {
+    background-color: #3498db;
+    color: #fff;
+}
+
+button:nth-of-type(6) {
+    background-color: #3498db;
+    color: #fff;
+}
+
+button:hover {
+    background-color: #3498db;
+    border: none;
+    border-radius: 10px;
+}
+
+button:not(:last-of-type) {
+    margin-bottom: 15px;
+}
+
+footer {
+    text-align: center;
+    margin-top: auto;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+/* Estilos del contenedor principal */
+.dropdown {
+    display: inline-block;
+    position: relative;
+}
+
+/* Estilos del botón del menú */
+.dropbtn {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Estilos del contenido del menú desplegable */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/* Estilos de los elementos del menú desplegable */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Cambia el color del enlace cuando pasas el ratón sobre él */
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Muestra el menú desplegable cuando pasas el ratón sobre el botón */
+.dropdown:hover .dropdown-content {
+    display: block;
+}

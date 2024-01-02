@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Usuarios</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/usuario.css">
+</head>
+
+<body>
+    <header>
+
+        <h1 class="ListE">Usuarios</h1>
+        <div class="dropdown">
+            <button class="dropbtn">Menú</button>
+            <div class="dropdown-content">
+                <a href='/empresa/lista'>Empresas</a>
+                <a href='/evaluaciones/lista'>Evaluaciones</a>
+                <a href='/promedio/lista'>Promedio</a>
+                <a href='/usuario/formulario'>Nuevo Usuario</a>
+                <a href='/login'>Cerrar sesion</a>
+            </div>
+        </div>
+    </header>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Correo</th>
+                <th>Telefono</th>
+                <th>Rol</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="usuario : ${usuarios}">
+                <td th:text="${usuario.id}"></td>
+                <td th:text="${usuario.nombre}"></td>
+                <td th:text="${usuario.apellido}"></td>
+                <td th:text="${usuario.email}"></td>
+                <td th:text="${usuario.telefono}"></td>
+                <td th:text="${usuario.rol}"></td>
+                <td class="action-buttons">
+                    <a th:href="@{/usuario/editarUsuario/{id}(id=${usuario.id})}">
+                        <i class="fas fa-edit"></i> Editar
+                    </a>
+                    <a th:href="@{/usuario/cambiarContrasena/{id}(id=${usuario.id})}">
+                        <i class="fas fa-key"></i> Cambiar Contraseña
+                    </a>
+                    <a th:href="@{/usuario/eliminarUsuario/{id}(id=${usuario.id})}"
+                        onclick="return confirm('¿Estás seguro?')">
+                        <i class="fas fa-trash"></i> Eliminar
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <br>
+
+    <footer>
+        <p>&copy; 2023 CENS - Todos los derechos reservados</p>
+    </footer>
+</body>
+
+</html>
