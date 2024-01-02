@@ -1,0 +1,28 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Grupo7Application",
+            "request": "launch",
+            "mainClass": "s2.proyecto.Grupo7Application",
+            "projectName": "project"
+        },
+        {
+            "type": "java",
+            "name": "Grupo7Application",
+            "request": "launch",
+            "mainClass": "s2.proyecto.Grupo7Application",
+            "projectName": "grupo7"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-Grupo7Application<grupo7>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "s2.grupo7.Grupo7Application",
+            "projectName": "grupo7",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

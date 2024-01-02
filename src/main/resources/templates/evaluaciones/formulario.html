@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 400px;
+            margin: auto;
+        }
+
+        h2 {
+            color: #3498db; /* Azul */
+            margin-top: 0; /* Elimina el margen superior del título */
+            font-size: 28px; /* Tamaño de fuente grande */
+        }
+
+        label {
+            display: block;
+            margin: 15px 0;
+            font-size: 18px; /* Tamaño de fuente grande */
+            color: #333; /* Texto negro */
+        }
+
+        select {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 2px solid #3498db; /* Azul */
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 16px; /* Tamaño de fuente */
+        }
+
+        button {
+            background-color: #3498db;
+            color: #fff;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #2980b9; /* Tono más oscuro de azul */
+        }
+    </style>
+</head>
+<body>
+
+<h2>Formulario</h2>
+
+<form action="/evaluaciones/guardarUsabilidad" method="post" th:object="${evaluacion}">
+    <label for="pregunta1">Demanda 1:</label>
+    <select id="pregunta1" name="evaluacionUsabilidad">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+    </select>
+
+    <label for="pregunta2">Demanda 2:</label>
+    <select id="pregunta2" name="evaluacionUsabilidad">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+    </select>
+
+    <label for="pregunta3">Demanda 3:</label>
+    <select id="pregunta3" name="evaluacionUsabilidad">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+    </select>
+
+    <label for="pregunta4">Demanda 4:</label>
+    <select id="pregunta4" name="evaluacionUsabilidad">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+    </select>
+
+    <label for="pregunta5">Demanda 5:</label>
+    <select id="pregunta5" name="evaluacionUsabilidad">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+    </select>
+
+    <button type="submit">Guardar</button>
+</form>
+
+</body>
+</html>

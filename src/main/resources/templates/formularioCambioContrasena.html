@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/css/cambiopass.css">
+    <title>Cambio de contraseña</title>
+</head>
+
+<body>
+    <form action="/usuario/guardarContrasena" method="post" th:object="${usuario}">
+        <h1>Cambiar Contraseña</h1>
+        <h2>Regístrese para realizar el cambio</h2>
+        <table>
+            <tr>
+                <th>Nombre Usuario</th>
+                <td>
+                    <i class="bi bi-person-circle"></i>
+                    <input type="text" name="nombre" th:value="*{nombre}" readonly>
+                </td>
+            </tr>
+            <tr>
+                <th>ID</th>
+                <td>
+                    <i class="bi bi-person-vcard"></i>
+                    <input type="text" name="id" th:value="*{id}" readonly>
+                </td>
+            </tr>
+            <tr>
+                <th>Nueva Contraseña</th>
+                <td>
+                    <i class="bi bi-lock-fill"></i>
+                    <input type="password" name="nuevaContrasena" required>
+                </td>
+            </tr>
+        </table>
+
+        <button type="submit">Cambiar Contraseña</button>
+        <button onclick="location.href='/usuario/lista'">Cancelar</button>
+    </form>
+    <footer>
+        <p>&copy; 2023 CENS - Todos los derechos reservados</p>
+    </footer>
+</body>
+
+</html>

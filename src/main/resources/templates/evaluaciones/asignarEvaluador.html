@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asignar Evaluador</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f3f3f3;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #header {
+            background-color: #3498db;
+            width: 100%;
+            height: 60px;
+            display: flex;
+            color: #fff;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        form {
+            width: 60%;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #3498db;
+        }
+
+        label {
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        select, input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button, a {
+            background-color: #3498db;
+            color: #fff;
+            padding: 15px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+            display: inline-block;
+            margin-top: 10px;
+            box-sizing: border-box;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        button:hover, a:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="header">
+        <h1>Asignar Evaluador</h1>
+    </div>
+
+    <form action="/evaluaciones/asignarEvaluador" method="post">
+        <div class="form-group">
+            <label for="idEvaluador">Selecciona el Evaluador:</label>
+            <select id="idEvaluador" name="idEvaluador" class="form-control">
+                <option th:each="evaluador : ${evaluadores}" th:value="${evaluador.id}" th:text="${evaluador.nombre + ' ' + evaluador.apellido}"></option>
+            </select>
+        </div>
+
+        <input type="hidden" name="idEvaluacion" th:value="${evaluacionId}">
+
+        <button type="submit" class="btn btn-primary">Asignar Evaluador</button>
+        <a href="/evaluaciones/lista" class="btn btn-secondary">Volver</a>
+    </form>
+
+</body>
+
+</html>
